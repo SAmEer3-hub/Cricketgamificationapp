@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D1117">
+
+    <!-- ── APP BAR ── -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#161B22"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvToolbarTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select Your Team"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"/>
+
+                <TextView
+                    android:id="@+id/tvMatchNameToolbar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="India vs Australia"
+                    android:textSize="12sp"
+                    android:textColor="#8B949E"/>
+
+            </LinearLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- ── MAIN CONTENT ── -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <!-- ── SELECTION COUNTER STRIP ── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="#161B22"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="12dp">
+
+            <!-- Player count indicator -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvSelectedCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0 / 11 Players Selected"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginBottom="6dp"/>
+
+                <!-- Progress bar showing selection progress -->
+                <ProgressBar
+                    android:id="@+id/progressSelection"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="6dp"
+                    android:max="11"
+                    android:progress="0"
+                    android:progressTint="#1F6FEB"
+                    android:progressBackgroundTint="#21262D"/>
+
+            </LinearLayout>
+
+            <!-- Credits remaining -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="end"
+                android:layout_marginStart="16dp">
+
+                <TextView
+                    android:id="@+id/tvCreditsUsed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0.0 / 100"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="#F0883E"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="credits used"
+                    android:textSize="11sp"
+                    android:textColor="#8B949E"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- ── ROLE FILTER TABS ── -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="10dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tabAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="All"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:background="@drawable/bg_tab_selected"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="7dp"
+                    android:layout_marginEnd="8dp"/>
+
+                <TextView
+                    android:id="@+id/tabBat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🏏 BAT"
+                    android:textSize="13sp"
+                    android:textColor="#8B949E"
+                    android:background="@drawable/bg_tab_unselected"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="7dp"
+                    android:layout_marginEnd="8dp"/>
+
+                <TextView
+                    android:id="@+id/tabBowl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🎳 BOWL"
+                    android:textSize="13sp"
+                    android:textColor="#8B949E"
+                    android:background="@drawable/bg_tab_unselected"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="7dp"
+                    android:layout_marginEnd="8dp"/>
+
+                <TextView
+                    android:id="@+id/tabAR"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="⚡ AR"
+                    android:textSize="13sp"
+                    android:textColor="#8B949E"
+                    android:background="@drawable/bg_tab_unselected"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="7dp"
+                    android:layout_marginEnd="8dp"/>
+
+                <TextView
+                    android:id="@+id/tabWK"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🧤 WK"
+                    android:textSize="13sp"
+                    android:textColor="#8B949E"
+                    android:background="@drawable/bg_tab_unselected"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="7dp"/>
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#21262D"/>
+
+        <!-- ── PLAYER LIST (RecyclerView) ── -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPlayers"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingTop="8dp"
+            android:paddingBottom="90dp"
+            android:clipToPadding="false"/>
+
+    </LinearLayout>
+
+    <!-- ── BOTTOM SUBMIT BUTTON ── -->
+    <LinearLayout
+        android:id="@+id/layoutSubmitBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:background="#161B22"
+        android:padding="16dp">
+
+        <!-- Validation message shown above button -->
+        <TextView
+            android:id="@+id/tvValidationMsg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="13sp"
+            android:textColor="#F85149"
+            android:gravity="center"
+            android:visibility="gone"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- Already submitted message -->
+        <TextView
+            android:id="@+id/tvAlreadySubmitted"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="✅ Team already submitted for this match!"
+            android:textSize="13sp"
+            android:textColor="#3FB950"
+            android:gravity="center"
+            android:visibility="gone"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- Submit / Loading button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSubmitTeam"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="Submit Team (0/11)"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            app:backgroundTint="#238636"
+            app:cornerRadius="10dp"/>
+
+        <!-- Loading indicator during submission -->
+        <ProgressBar
+            android:id="@+id/progressBarSubmit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:layout_marginTop="8dp"/>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

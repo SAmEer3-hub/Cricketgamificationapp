@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutChatItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="12dp"
+    android:paddingVertical="4dp">
+
+    <!-- Sender name (shown above bubble, hidden for sent messages) -->
+    <TextView
+        android:id="@+id/tvChatSenderName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="player1"
+        android:textSize="11sp"
+        android:textColor="#8B949E"
+        android:layout_marginBottom="2dp"
+        android:layout_marginStart="4dp"
+        android:visibility="gone"/>
+
+    <!-- Message bubble -->
+    <LinearLayout
+        android:id="@+id/layoutBubbleContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Spacer (for RECEIVED: 0 weight, SENT: 1 weight to push bubble right) -->
+        <View
+            android:id="@+id/spacerLeft"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="0"/>
+
+        <!-- The bubble itself -->
+        <LinearLayout
+            android:id="@+id/layoutBubble"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_chat_received"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="8dp"
+            android:maxWidth="260dp">
+
+            <TextView
+                android:id="@+id/tvChatText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hello!"
+                android:textSize="14sp"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="3dp"/>
+
+            <TextView
+                android:id="@+id/tvChatTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10:30 AM"
+                android:textSize="10sp"
+                android:textColor="#8B949E"
+                android:layout_gravity="end"/>
+
+        </LinearLayout>
+
+        <!-- Spacer (for SENT: 0 weight, RECEIVED: 1 weight) -->
+        <View
+            android:id="@+id/spacerRight"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="0"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginBottom="14dp"
+    app:cardCornerRadius="16dp"
+    app:cardBackgroundColor="#161B22"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- ── TOP ROW: Match Type + Status Badge ── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="14dp">
+
+            <!-- Match Type pill (T20, ODI, Test) -->
+            <TextView
+                android:id="@+id/tvMatchType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="T20"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="#C9D1D9"
+                android:background="@drawable/bg_match_type"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"/>
+
+            <!-- Spacer pushes status badge to the right -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"/>
+
+            <!-- Status badge (LIVE / UPCOMING / COMPLETED) -->
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LIVE"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/bg_status_live"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"/>
+
+        </LinearLayout>
+
+        <!-- ── MIDDLE ROW: Team 1 | VS | Team 2 ── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="14dp">
+
+            <!-- Team 1 Block -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <!-- Team 1 Flag -->
+                <TextView
+                    android:id="@+id/tvTeam1Flag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🇮🇳"
+                    android:textSize="32sp"
+                    android:layout_marginBottom="6dp"/>
+
+                <!-- Team 1 Short Name -->
+                <TextView
+                    android:id="@+id/tvTeam1Short"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="IND"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"/>
+
+                <!-- Team 1 Full Name -->
+                <TextView
+                    android:id="@+id/tvTeam1Full"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="India"
+                    android:textSize="12sp"
+                    android:textColor="#8B949E"/>
+
+            </LinearLayout>
+
+            <!-- VS divider -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="VS"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="#58A6FF"/>
+
+            </LinearLayout>
+
+            <!-- Team 2 Block -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <!-- Team 2 Flag -->
+                <TextView
+                    android:id="@+id/tvTeam2Flag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🇦🇺"
+                    android:textSize="32sp"
+                    android:layout_marginBottom="6dp"/>
+
+                <!-- Team 2 Short Name -->
+                <TextView
+                    android:id="@+id/tvTeam2Short"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AUS"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"/>
+
+                <!-- Team 2 Full Name -->
+                <TextView
+                    android:id="@+id/tvTeam2Full"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Australia"
+                    android:textSize="12sp"
+                    android:textColor="#8B949E"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- ── DIVIDER ── -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#21262D"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- ── BOTTOM ROW: Venue + Date ── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="14dp">
+
+            <!-- Venue -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📍 "
+                    android:textSize="12sp"/>
+
+                <TextView
+                    android:id="@+id/tvVenue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Wankhede, Mumbai"
+                    android:textSize="12sp"
+                    android:textColor="#8B949E"
+                    android:maxLines="1"
+                    android:ellipsize="end"/>
+
+            </LinearLayout>
+
+            <!-- Date -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🕐 "
+                    android:textSize="12sp"/>
+
+                <TextView
+                    android:id="@+id/tvDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Today, 7:30 PM"
+                    android:textSize="12sp"
+                    android:textColor="#8B949E"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- ── ACTION BUTTON ── -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPlayNow"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:text="Select Team &amp; Play"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            app:backgroundTint="#1F6FEB"
+            app:cornerRadius="10dp"/>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

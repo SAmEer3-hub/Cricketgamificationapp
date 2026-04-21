@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="14dp"
+    app:cardBackgroundColor="#161B22"
+    app:cardElevation="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- ── Row 1: League name + Status badge ── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="6dp">
+
+            <TextView
+                android:id="@+id/tvLeagueName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="League Name"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:maxLines="1"
+                android:ellipsize="end"/>
+
+            <TextView
+                android:id="@+id/tvLeagueStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⏳ OPEN"
+                android:textSize="11sp"
+                android:textColor="#FFFFFF"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"/>
+
+        </LinearLayout>
+
+        <!-- ── Row 2: Match name ── -->
+        <TextView
+            android:id="@+id/tvLeagueMatchName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🏏 Match Name"
+            android:textSize="13sp"
+            android:textColor="#8B949E"
+            android:layout_marginBottom="4dp"/>
+
+        <!-- ── Row 3: Members count ── -->
+        <TextView
+            android:id="@+id/tvLeagueMembersCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 / 10 members"
+            android:textSize="13sp"
+            android:textColor="#8B949E"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- ── Divider ── -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#21262D"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- ── Row 4: Invite code ── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Code: "
+                android:textSize="13sp"
+                android:textColor="#8B949E"/>
+
+            <TextView
+                android:id="@+id/tvLeagueCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ABC123"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="#1F6FEB"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="3dp"/>
+
+        </LinearLayout>
+
+        <!-- ── Row 5: Buttons ── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnShareLeague"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:text="Share"
+                android:textSize="13sp"
+                android:textColor="#8B949E"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+            <Button
+                android:id="@+id/btnOpenLeague"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="View League"
+                android:textSize="13sp"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#1F6FEB"
+                style="@style/Widget.MaterialComponents.Button"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

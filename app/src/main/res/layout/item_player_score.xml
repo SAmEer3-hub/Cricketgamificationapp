@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="12dp">
+
+    <!-- ── Rank number ── -->
+    <TextView
+        android:id="@+id/tvRank"
+        android:layout_width="28dp"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:textColor="#8B949E"
+        android:gravity="center"
+        android:layout_marginEnd="10dp"/>
+
+    <!-- ── Role badge ── -->
+    <TextView
+        android:id="@+id/tvScoreRole"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:gravity="center"
+        android:text="BAT"
+        android:textSize="9sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/bg_role_bat"
+        android:layout_marginEnd="12dp"/>
+
+    <!-- ── Player name + team ── -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvScorePlayerName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Virat Kohli"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="2dp"/>
+
+        <!-- Stats summary line -->
+        <TextView
+            android:id="@+id/tvScoreStats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="82 runs | 2 wkts | 1 ct"
+            android:textSize="11sp"
+            android:textColor="#8B949E"/>
+
+    </LinearLayout>
+
+    <!-- ── Points chip ── -->
+    <TextView
+        android:id="@+id/tvScorePoints"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="124"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/bg_points_chip"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="6dp"
+        android:minWidth="56dp"
+        android:gravity="center"/>
+
+</LinearLayout>
